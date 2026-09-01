@@ -1,1 +1,100 @@
-
+{
+  "scenario_id": "frankfurt_airport",
+  "title": "🛬 Arrival at Frankfurt Airport",
+  "urdu_context": "آپ فرینکفرٹ ائیرپورٹ پر اترے ہیں۔ آپ کو ٹرین اسٹیشن کا راستہ پوچھنا ہے۔",
+  "initial_node": "start",
+  "nodes": {
+    "start": {
+      "npc_text": "Guten Tag! Wie kann ich Ihnen helfen?",
+      "urdu_translation": "ہیلو! میں آپ کی کیا مدد کر سکتا ہوں؟",
+      "english_translation": "Hello! How can I help you?",
+      "audio_text": "Guten Tag! Wie kann ich Ihnen helfen?",
+      "grammar_tip": "👔 'Ihnen' = Formal 'Aap'. Using 'du' here is like saying 'Tum' to a police officer!",
+      "options": [
+        {
+          "text": "Wo ist der Bahnhof, bitte?",
+          "urdu": "ٹرین اسٹیشن کہاں ہے، پلیز؟",
+          "english": "Where is the train station, please?",
+          "correct": true,
+          "next_node": "station_direction",
+          "grammar_tip": "✅ 'Wo' = 'Where' (کہاں). Verb comes SECOND in German."
+        },
+        {
+          "text": "Ich will essen.",
+          "urdu": "مجھے کھانا کھانا ہے۔",
+          "english": "I want to eat.",
+          "correct": false,
+          "next_node": "rude_retry",
+          "grammar_tip": "❌ 'Ich will' is too direct. Always start with a greeting."
+        }
+      ]
+    },
+    "rude_retry": {
+      "npc_text": "Entschuldigung? Bitte grüßen Sie mich zuerst. Noch einmal: Wie kann ich helfen?",
+      "urdu_translation": "معاف کیجئے؟ پہلے سلام کیجئے۔ ایک بار پھر: میں کیا مدد کر سکتا ہوں؟",
+      "english_translation": "Excuse me? Please greet me first. One more time: How can I help?",
+      "audio_text": "Entschuldigung? Bitte grüßen Sie mich zuerst. Noch einmal: Wie kann ich helfen?",
+      "grammar_tip": "😅 Always use 'Guten Tag' + 'bitte' with strangers.",
+      "options": [
+        {
+          "text": "Guten Tag! Wo ist der Bahnhof, bitte?",
+          "urdu": "ہیلو! ٹرین اسٹیشن کہاں ہے، پلیز؟",
+          "english": "Hello! Where is the train station, please?",
+          "correct": true,
+          "next_node": "station_direction",
+          "grammar_tip": "✅ Perfect! You fixed the formality."
+        }
+      ]
+    },
+    "station_direction": {
+      "npc_text": "Der Bahnhof ist geradeaus im Untergeschoss.",
+      "urdu_translation": "اسٹیشن سیدھا نیچے والی منزل پر ہے۔",
+      "english_translation": "The station is straight ahead in the basement.",
+      "audio_text": "Der Bahnhof ist geradeaus im Untergeschoss.",
+      "grammar_tip": "📍 'geradeaus' = straight ahead.",
+      "options": [
+        {
+          "text": "Vielen Dank! Auf Wiedersehen!",
+          "urdu": "بہت شکریہ! خدا حافظ!",
+          "english": "Thank you very much! Goodbye!",
+          "correct": true,
+          "next_node": "finish",
+          "grammar_tip": "🎉 'Auf Wiedersehen' is formal goodbye."
+        },
+        {
+          "text": "Was? Ich verstehe nicht.",
+          "urdu": "کیا؟ میری سمجھ نہیں آئی۔",
+          "english": "What? I don't understand.",
+          "correct": false,
+          "next_node": "confused_retry",
+          "grammar_tip": "🤔 Say 'Entschuldigung' instead of just 'Was?'."
+        }
+      ]
+    },
+    "confused_retry": {
+      "npc_text": "Kein Problem! Der Bahnhof ist geradeaus im Untergeschoss.",
+      "urdu_translation": "کوئی بات نہیں! اسٹیشن سیدھا نیچے والی منزل پر ہے۔",
+      "english_translation": "No problem! The station is straight ahead in the basement.",
+      "audio_text": "Kein Problem! Der Bahnhof ist geradeaus im Untergeschoss.",
+      "grammar_tip": "🗣️ 'Kein Problem' is very common in Germany.",
+      "options": [
+        {
+          "text": "Vielen Dank! Auf Wiedersehen!",
+          "urdu": "بہت شکریہ! خدا حافظ!",
+          "english": "Thank you very much! Goodbye!",
+          "correct": true,
+          "next_node": "finish",
+          "grammar_tip": "✅ You're all set!"
+        }
+      ]
+    },
+    "finish": {
+      "npc_text": "Gerne! Gute Reise und viel Erfolg!",
+      "urdu_translation": "خوش آمدید! جرمنی میں آپ کا سفر مبارک ہو!",
+      "english_translation": "You're welcome! Have a good trip!",
+      "audio_text": "Gerne! Gute Reise und viel Erfolg!",
+      "is_finish": true,
+      "grammar_tip": "🏆 Scenario complete! +10 Points!"
+    }
+  }
+}
